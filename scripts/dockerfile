@@ -1,0 +1,15 @@
+# Use official lightweight Python image
+FROM python:3.12-slim
+
+# Set working directory in container
+WORKDIR /app
+
+# Copy all script files
+COPY . /app
+
+# Install dependencies
+RUN pip install requests
+
+# Run the weather script
+ENTRYPOINT ["python", "weather_report.py"]
+
